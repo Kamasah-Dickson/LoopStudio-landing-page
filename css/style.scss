@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+
+@import '../css/partials/colors';
+@import '../css/partials/header';
+@import '../css/partials/main';
+@import '../css/partials/main2';
+@import '../css/partials/footer';
+
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: 'Alata', sans-serif;
+    line-height: 24px;
+}
+
+
+html{
+    scroll-behavior: smooth;
+    font-size: 100%;
+    
+}
+
+body{
+    font-size: 15px;
+    height: 100vh;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+}
+
+.desktop-img{
+    display: none;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+button{
+    cursor: pointer;
+}

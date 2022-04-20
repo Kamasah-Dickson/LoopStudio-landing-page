@@ -1,0 +1,209 @@
+.header-wrapper{
+    background-image: url('../images/mobile/image-hero.jpg');
+    width:100%;
+    height: 140vh;
+    background-size: cover;
+    overflow-x: hidden;
+    
+    header{
+        position: relative;
+        top:0;
+        left:0;
+        width: 100%;
+        .container{
+            padding:2.4rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .logo{
+                width:145px;
+            }
+            nav{
+                
+                .hamburger{
+                    position: relative;
+                    
+                }
+                .nav-links{
+                    background-color: $black;
+                    position: absolute;
+                    top:0;
+                    right:0;
+                    width: 100%;
+                    height: 100vh;
+                    transform:translateX(100%);
+                    transition: .4s ease;
+                    &.open-nav{
+                        transform: translateX(0);
+                    }
+                    .top{
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        padding:2.4rem 1.5rem;
+                        .logo{
+                            width: 145px;
+                        }
+                        
+                    }
+                    .links{
+                        margin-top:7rem;
+                        background-color: $black;
+                        padding:1rem 0;
+                        
+                        li{
+                            list-style: none;
+                            margin:1.5rem 0;
+                            margin-left:1.5rem;
+                            a{
+                                font-size: 1.4rem;
+                                letter-spacing: 2px;
+                                text-transform: uppercase;
+                                text-decoration: none;
+                                color:$white;
+                                font-family: 'Josefin Sans', sans-serif;
+                                font-weight: 300;
+                                cursor:pointer;
+                                position:relative;
+                                &::before{
+                                    content:"";
+                                    position:absolute;
+                                    bottom:-2px;
+                                    left:0;
+                                    width:0;
+                                    height:1.4px;
+                                    background-color:$white;
+                                    transition: .3s ease;
+                                }
+                                &:hover::before{
+                                    width:100%;
+                                    
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+            }
+            
+        }
+    }
+}
+
+.hero-section{
+    margin-top:5rem;
+    .container{
+        max-width:530px;
+        padding:2.7rem 1.5rem;
+        
+        margin:0 auto;
+        h1{
+            padding:1rem;
+            border:2px solid $white;
+            text-transform: uppercase;
+            color: $white;
+            font-size: 2.7rem;
+            line-height: 40px;
+            font-family: 'Josefin Sans', sans-serif;
+            font-weight: 300;
+        }
+    }
+}
+
+@media screen and (max-width:365px){
+    .hero-section{
+        .container{
+            h1{
+                font-size: 2.3rem;
+            }
+        }
+    }  
+}
+
+
+
+@media screen and (min-width:700px) {
+    .header-wrapper{
+        background-image: url('../images/desktop/image-hero.jpg');
+        height: 580px;
+        background-position: center center;
+        overflow-x: unset;
+        
+        header{
+            .container{
+                padding:2.5rem 0;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                max-width:1200px;
+                width:80%;
+                .logo{
+                    width:170px;
+                }
+                nav{
+                    position: relative;
+                    .logo{
+                        display: none;
+                    }
+                    .hamburger{
+                        display:none;
+                        
+                    }
+                    .nav-links{
+                        background-color: unset;
+                        position: relative;
+                        width: unset;
+                        height: unset;
+                        transform:unset;
+                        .top{
+                            display:none;
+                            padding:unset;
+                        }
+                        .links{
+                            display: flex;
+                            margin-top:0rem;
+                            background-color: unset;
+                            padding:1rem 0;
+                            
+                            li{
+                                margin:0;
+                                margin-left:2rem;
+                                a{
+                                    font-size: .9rem;
+                                    font-family: 'Alata', sans-serif;
+                                    font-weight: 400;
+                                    text-transform: capitalize;
+                                    letter-spacing: 0px;
+                                    font-family: 'Alata', sans-serif;
+                                    font-weight: 400;
+                                    position:relative;
+                                }
+                            }
+                        }
+                        
+                    }
+                }
+                
+            }
+        }
+    }
+    
+    .hero-section{
+        margin-top:0rem;
+        .container{
+            display:flex;
+            align-items: flex-start;
+            max-width:1200px;
+            width:80%;
+            padding:0;
+            margin-top:4rem;
+            h1{
+                max-width: 590px;
+                padding:2rem;
+                font-size: 4rem;
+                line-height: 63px;
+            }
+        }
+    }
+    
+}

@@ -1,0 +1,203 @@
+main{
+    padding-top: 2rem;
+    .container{
+        padding:2.4rem 1.5rem;
+        .creations{
+            text-align: center;
+            h1{
+                font-size: 2rem;
+                text-transform:uppercase;
+                font-family: 'Josefin Sans', sans-serif;
+                font-weight: 300;
+                margin-bottom: 3.8rem;
+                
+            }
+            .btn1{
+                display: none;
+            }
+        }
+        .grid-creations{
+            display: -moz-grid;
+            display:-ms-grid;
+            display: grid;
+            -ms-grid-rows: inherit;
+            grid-template-rows: repeat(8,1fr);
+            grid-gap: 1.7rem;
+            .box{
+                position:relative;
+                &:nth-child(4){
+                    span{
+                        max-width: 110px;
+                    }
+                }
+                &::before{
+                    content: "";
+                    position: absolute;
+                    top:0;
+                    left:0;
+                    width:100%;
+                    height: 100%;
+                    color:$black;
+                    transition: .3s ease;
+                    background-color: hsla(0, 0%, 0%, 0.253);
+                }
+                
+                &:hover::before{
+                    background-color:hsla(0, 0%, 100%, 0.568);
+                }
+                &:hover span{
+                    color:$black;
+                }
+                &:hover{
+                    cursor: pointer;
+                }
+                span{
+                    position: absolute;
+                    bottom:1rem;
+                    left:1rem;
+                    color:$white;
+                    font-size: 1.6rem;
+                    text-transform: uppercase;
+                    max-width: 150px;
+                    font-family: 'Josefin Sans', sans-serif;
+                    font-weight: 300;
+                    
+                }
+            }
+            
+        }
+        .btn2{
+            display: block;
+            cursor: pointer;
+            font-size: 1rem;
+            padding:.5rem 0rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            background: transparent;
+            width:160px;
+            margin:0 auto;
+            margin-top: 2.3rem;
+            transition: .3s ease;
+            border:2px solid $black;
+            &:hover{
+                background-color: $black;
+                color:$white;
+            }
+        }
+        
+    }
+}
+
+
+
+@media screen and (min-width:700px) {
+    main{
+        margin-top:10rem;
+        padding-top: 1rem;
+        .container{
+            padding:0;
+            width:80%;
+            max-width: 1200px;
+            .creations{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                text-align: left;
+                margin-bottom: 4.5rem;
+                h1{
+                    font-size: 2.7rem;
+                    text-transform:uppercase;
+                    font-family: 'Josefin Sans', sans-serif;
+                    font-weight: 300;
+                    margin-bottom:0rem;
+                    
+                }
+                .btn1{
+                    display: block;
+                    background:none;
+                    width:150px;
+                    padding:.2rem 0;
+                    font-size:1rem;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    transition: .3s ease;
+                    &:hover{
+                        background-color: $black;
+                        color:$white;
+                    }
+                }
+            }
+            
+            
+            .grid-creations{
+                -ms-grid-rows: unset;
+                -ms-grid-columns: inherit;
+                grid-template-rows: unset;
+                grid-template-columns: repeat(auto-fit,minmax(210px,1fr));
+                grid-template-rows: 400px;
+                grid-auto-rows: 400px;
+                grid-gap: 1.9rem;
+                .box{
+                    &:hover{
+                        box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.4);
+                    }
+                    &::before{
+                        background-color: unset;
+                    }
+                    .mobile-img{
+                        display: none;
+                    }
+                    .desktop-img{
+                        display:block;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: center top;
+                    }
+                    
+                    &::before{
+                        transition: .3s ease;
+                    }
+                    
+                    span{
+                        position: absolute;
+                        bottom:2rem;
+                        left:2rem;
+                        font-size: 1.8rem;
+                        max-width: 150px;
+                        font-family: 'Josefin Sans', sans-serif;
+                        font-weight: 300;
+                        line-height: 30px;
+                        
+                    }
+                }
+                
+            }
+            
+            .btn2{
+                display: none;
+            }
+        }
+    }
+    
+}
+
+@media screen and (min-width:860px) {
+    main{
+        .container{
+            .grid-creations{
+                grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+                grid-template-rows: unset;
+                grid-auto-rows: unset;
+                .box{
+                    .desktop-img{
+                        object-fit: unset;
+                        object-position:unset;
+                    }
+                    
+                }
+                
+            }
+        }
+    }
+}
